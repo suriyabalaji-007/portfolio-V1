@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  
+  <!-- Performance Optimization: Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- SEO Primary Meta Tags -->
+  <title>S. Suriyabalaji | Software Developer & Karate Sensei | Portfolio</title>
+  <meta name="title" content="S. Suriyabalaji | Software Developer & Karate Sensei | Portfolio">
+  <meta name="description" content="Portfolio of S. Suriyabalaji - A Software Developer & Karate Sensei specializing in Generative AI, Full-stack Engineering, and scalable digital ecosystems. Explore my projects: FinAIMT, Dojo System, and Weapon Detection.">
+  <meta name="keywords" content="Suriyabalaji, S. Suriyabalaji, Software Developer Chennai, Full-stack Engineer, Generative AI Developer, Karate Sensei, FinAIMT, Dojo System, MERN Stack, Flutter Developer, Portfolio">
+  <meta name="author" content="S. Suriyabalaji">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://suriyabalajiportfolio.netlify.app/">
+  <meta property="og:title" content="S. Suriyabalaji | Software Developer & Karate Sensei">
+  <meta property="og:description" content="Architecting high-performance digital ecosystems where Generative AI meets scalable Full-stack engineering. Precision of a Martial Artist, vision of a Technologist.">
+  <meta property="og:image" content="images/p1.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://suriyabalajiportfolio.netlify.app/">
+  <meta property="twitter:title" content="S. Suriyabalaji | Software Developer & Karate Sensei">
+  <meta property="twitter:description" content="Architecting high-performance digital ecosystems where Generative AI meets scalable Full-stack engineering. Explore my projects and certifications.">
+  <meta property="twitter:image" content="images/p1.png">
+
+  <!-- JSON-LD Structured Data (Person/Developer) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "S. Suriyabalaji",
+    "url": "https://suriyabalajiportfolio.netlify.app/",
+    "jobTitle": "Software Developer & Karate Sensei",
+    "email": "suriyabalaji373@gmail.com",
+    "telephone": "+91-9962434596",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Mohamed Sathak A.J.College of Engineering"
+    },
+    "sameAs": [
+      "https://github.com/suriyabalaji-007",
+      "https://linkedin.com/in/s-suriyabalaji",
+      "https://instagram.com/sensei_suriyabalaji"
+    ],
+    "description": "Software Developer specializing in MERN stack, Flutter, and Generative AI. Also a professional Karate Instructor at Goshin Ryu Karate Do.",
+    "knowsAbout": ["Java", "Python", "JavaScript", "React.js", "Node.js", "Next.js", "Flutter", "Generative AI", "AWS", "MySQL"]
+  }
+  </script>
+
+  <!-- Google Fonts: Funnel Sans (Trendy) & Outfit -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Funnel+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #09090b;
+      --card: rgba(24, 24, 27, 0.4);
+      --accent: #6ee7b7;
+      --accent-dim: rgba(110, 231, 183, 0.1);
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --glass-border: rgba(255, 255, 255, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; font-family: 'Outfit', sans-serif; font-display: swap; }
+    body { background-color: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.5; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+
+    /* Performance: Rendering optimization for long sections */
+    #skills, #projects, #certs, #experience { content-visibility: auto; contain-intrinsic-size: 1px 500px; }
+
+    /* Noise Texture Overlay */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+      opacity: 0.15; pointer-events: none; z-index: 1000;
+    }
+
+    /* Layout */
+    .layout { display: flex; min-height: 100vh; }
+
+    /* Side Nav */
+    .sidenav {
+      width: 80px;
+      height: 100vh;
+      position: fixed;
+      left: 0; top: 0;
+      background: rgba(9, 9, 11, 0.4);
+      backdrop-filter: blur(20px);
+      border-right: 1px solid var(--glass-border);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 20px; z-index: 1001;
+    }
+    .sidenav a { 
+      color: var(--muted); font-size: 1.2rem; transition: 0.3s; padding: 12px; border-radius: 12px; 
+      position: relative; text-decoration: none;
+    }
+    .sidenav a:hover, .sidenav a.active { color: var(--accent); background: var(--accent-dim); }
+    
+    /* Tooltips */
+    .sidenav a::after {
+      content: attr(data-label);
+      position: absolute; left: 110%; top: 50%; transform: translateY(-50%);
+      background: var(--accent); color: #000; padding: 4px 10px; border-radius: 6px;
+      font-size: 0.7rem; font-weight: 700; white-space: nowrap;
+      opacity: 0; pointer-events: none; transition: 0.2s;
+    }
+    .sidenav a:hover::after { opacity: 1; left: 120%; }
+
+    main { 
+      flex: 1; 
+      margin-left: 80px; 
+      padding: 5vh 5vw; 
+      width: calc(100% - 80px); 
+      max-width: 1440px;
+      margin-right: auto;
+    }
+
+    /* Header Section */
+    .hero { margin-bottom: 80px; width: 100%; }
+    .hero span { color: var(--accent); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: 1.4rem; display: block; margin-bottom: 5px; opacity: 0.9; }
+    .hero h1 { font-family: 'Funnel Sans', sans-serif; font-size: clamp(3rem, 10vw, 5rem); line-height: 1; margin: 10px 0; }
+    .hero p { color: var(--muted); font-size: 1.2rem; margin-top: 20px; }
+
+    /* Bento Grid */
+    .bento { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 80px; grid-auto-flow: dense; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 30px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .card:hover { transform: translateY(-5px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    .card h2 { font-family: 'Funnel Sans', sans-serif; margin-bottom: 20px; font-size: 1.5rem; display: flex; align-items: center; gap: 10px; }
+    .card h2 i { color: var(--accent); font-size: 1rem; }
+
+    /* Specific Card Sizes */
+    .col-2 { grid-column: span 2; }
+    .col-3 { grid-column: span 3; }
+    .row-2 { grid-row: span 2; }
+
+    /* Projects Grid */
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+    .proj-item { border-radius: 16px; overflow: hidden; background: #000; position: relative; cursor: pointer; }
+    .proj-item img { width: 100%; height: 140px; object-fit: cover; opacity: 0.6; transition: 0.4s; }
+    .proj-item:hover img { opacity: 1; transform: scale(1.1); }
+    .proj-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 15px; background: linear-gradient(transparent, rgba(0,0,0,0.9)); pointer-events: none; }
+    .proj-overlay div { font-size: 0.8rem; font-weight: 700; color: #fff; }
+
+    /* Full Cert List (Optimized "No Empty" Layout) */
+    .cert-list { 
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .cert-item { 
+      position: relative; 
+      flex: 1 1 240px; /* Base width 240px, but grows to fill row */
+      height: 180px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .cert-item img { 
+      width: 100%; height: 100%; object-fit: cover; transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1); 
+    }
+    .cert-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.4));
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      opacity: 0; transition: 0.4s;
+      padding: 20px; text-align: center;
+      backdrop-filter: blur(2px);
+    }
+    .cert-item:hover {
+      transform: translateY(-5px) scale(1.02);
+      border-color: var(--accent);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 0 15px rgba(110, 231, 183, 0.1);
+      z-index: 10;
+    }
+    .cert-item:hover .cert-overlay { opacity: 1; }
+    .cert-item:hover img { transform: scale(1.05); filter: brightness(0.7); }
+    
+    .cert-info h4 { font-size: 0.95rem; color: #fff; margin-bottom: 4px; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    .cert-info p { font-size: 0.8rem; color: var(--accent); margin-bottom: 12px; font-weight: 500; }
+    
+    .cert-view-label {
+      padding: 6px 16px;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      border-radius: 6px;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(110, 231, 183, 0.3);
+    }
+
+    /* Skills chips */
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips span { background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 30px; font-size: 0.8rem; border: 1px solid var(--glass-border); }
+
+    /* Modal */
+    .modal {
+      display: none; position: fixed; z-index: 2000; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px);
+      padding: 20px; justify-content: center; align-items: center;
+    }
+    .modal.show { display: flex; }
+    .modal-shell { 
+      background: var(--bg); width: 95%; max-width: 1100px; height: 85vh; border-radius: 24px; 
+      border: 1px solid var(--accent); display: flex; overflow: hidden; position: relative;
+      box-shadow: 0 0 60px rgba(110, 231, 183, 0.15);
+    }
+    .modal-left { flex: 1.4; background: #000; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .modal-right { flex: 1; padding: 40px; border-left: 1px solid var(--glass-border); display: flex; flex-direction: column; overflow-y: auto; }
+    
+    .modal-img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.3s; }
+    .modal-controls { position: absolute; inset: 0; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; pointer-events: none; }
+    .modal-arrow { 
+      pointer-events: auto; width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%; 
+      display: flex; align-items: center; justify-content: center; cursor: pointer; color: #fff; transition: 0.3s; border: none;
+    }
+    .modal-arrow:hover { background: var(--accent); color: #000; }
+    
+    .modal-details h2 { font-size: 2rem; margin-bottom: 15px; color: var(--accent); }
+    .modal-details p { color: var(--muted); margin-bottom: 30px; font-size: 1rem; line-height: 1.6; }
+    .modal-links { display: flex; gap: 15px; margin-top: auto; }
+    .modal-btn { 
+      flex: 1; padding: 12px; border-radius: 12px; text-decoration: none; text-align: center; font-weight: 700; font-size: 0.9rem;
+      transition: 0.3s;
+    }
+    .modal-btn.primary { background: var(--accent); color: #000; }
+    .modal-btn.secondary { border: 1px solid var(--glass-border); color: #fff; }
+    .modal-btn:hover { opacity: 0.8; transform: translateY(-3px); }
+
+    .modal-shell.cert-mode { max-width: 950px; height: auto; max-height: 90vh; }
+    .modal-shell.cert-mode .modal-right { display: none; }
+    .modal-shell.cert-mode .modal-left { flex: 1; height: auto; min-height: 400px; }
+    .modal-shell.cert-mode .modal-img { max-height: 85vh; padding: 10px; }
+
+    .cert-floating-cap {
+      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+      background: rgba(0,0,0,0.85); backdrop-filter: blur(10px);
+      padding: 12px 28px; border-radius: 50px; border: 1px solid var(--accent);
+      color: var(--accent); font-weight: 600; font-size: 0.95rem;
+      pointer-events: none; opacity: 1; transition: 0.3s; z-index: 20;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      white-space: nowrap;
+    }
+    .modal-shell.cert-mode:hover .cert-floating-cap { opacity: 1; }
+
+    .close-btn { position: absolute; top: 20px; right: 20px; color: #fff; font-size: 30px; cursor: pointer; z-index: 10; background: rgba(0,0,0,0.5); width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--glass-border); }
+    .close-btn:hover { background: var(--accent); color: #000; }
+
+    @media (max-width: 1024px) {
+      .modal-shell { flex-direction: column; height: 95vh; }
+      .modal-right { padding: 25px; }
+    }
+
+    /* Footer */
+    footer { padding: 40px 0; border-top: 1px solid var(--glass-border); text-align: center; color: var(--muted); font-size: 0.9rem; }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+      .bento { grid-template-columns: repeat(2, 1fr); }
+      .col-3 { grid-column: span 2; }
+    }
+
+    @media (max-width: 900px) {
+      main { margin-left: 0; width: 100%; padding: 4vh 4vw; }
+      .sidenav { 
+        width: 100%; height: 60px; top: auto; bottom: 0; 
+        flex-direction: row; border-right: none; 
+        border-top: 1px solid var(--glass-border); 
+        padding-top: 5px;
+      }
+      .sidenav a::after { display: none; }
+      .bento { grid-template-columns: 1fr; gap: 20px; }
+      .col-2, .col-3 { grid-column: span 1; }
+      .hero h1 { font-size: 3.5rem; }
+      
+      /* Fix technical capabilities grid for mobile */
+      #skills > div { grid-template-columns: 1fr !important; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.5rem; }
+      .card { padding: 20px; }
+      .proj-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="layout">
+    <nav class="sidenav">
+      <a href="#about" class="active" data-label="Explorer"><i class="fas fa-user-ninja"></i></a>
+      <a href="#skills" data-label="Abilities"><i class="fas fa-bolt"></i></a>
+      <a href="#projects" data-label="Archive"><i class="fas fa-layer-group"></i></a>
+      <a href="#certs" data-label="Achievements"><i class="fas fa-award"></i></a>
+      <a href="#contact" data-label="Uplink"><i class="fas fa-paper-plane"></i></a>
+    </nav>
+
+    <main>
+      <section id="about" class="hero">
+        <span style="font-family: 'Funnel Sans', sans-serif;">SOFTWARE DEVELOPER // KARATE SENSEI</span>
+        <h1>S. SURIYABALAJI.</h1>
+        <p>Architecting high-performance digital ecosystems where Generative AI meets scalable Full-stack engineering. I build with the precision of a Martial Artist and the vision of a technologist—bridging the gap between complex logic and seamless, visionary user experiences.</p>
+        <div style="margin-top: 30px;">
+          <a href="mailto:suriyabalaji373@gmail.com" style="background: var(--accent); color: #000; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block;">Start a Connection</a>
+        </div>
+      </section>
+
+      <div class="bento">
+        <!-- SKILLS CARD -->
+        <div class="card col-2" id="skills">
+          <h2><i class="fas fa-microchip"></i> Technical Capabilities</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;">
+            <div>
+              <h3 style="font-size: 0.9rem; color: var(--accent); margin-bottom: 10px;">Languages</h3>
+              <div class="chips"><span>Java</span><span>Python</span><span>JavaScript</span></div>
+            </div>
+            <div>
+              <h3 style="font-size: 0.9rem; color: var(--accent); margin-bottom: 10px;">Frontend</h3>
+              <div class="chips"><span>React.js</span><span>Next.js</span><span>HTML/CSS</span></div>
+            </div>
+            <div>
+              <h3 style="font-size: 0.9rem; color: var(--accent); margin-bottom: 10px;">Backend</h3>
+              <div class="chips"><span>Node.js</span><span>Express</span><span>MySQL</span><span>AWS</span></div>
+            </div>
+            <div>
+              <h3 style="font-size: 0.9rem; color: var(--accent); margin-bottom: 10px;">Tools</h3>
+              <div class="chips"><span>Git & GitHub</span><span>Flutter</span><span>Android Studio</span><span>Antigravity</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDUCATION CARD -->
+        <div class="card" id="education">
+          <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+            <li>
+              <strong>B.Tech CSBS</strong>
+              <div style="font-size: 0.85rem; color: var(--muted);">Mohamed Sathak A.J.College of Engineering • 2026 • CGPA 7.8</div>
+            </li>
+            <hr style="opacity: 0.1;">
+            <li>
+              <strong>Higher Secondary</strong>
+              <div style="font-size: 0.85rem; color: var(--muted);">Avichi Hr Sec School • 2022 • 69%</div>
+            </li>
+            <hr style="opacity: 0.1;">
+            <li>
+              <strong>Secondary</strong>
+              <div style="font-size: 0.85rem; color: var(--muted);">Bharathi Matric Hr Sec • 2020 • 75%</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PROJECTS CARD -->
+        <div class="card col-2" id="projects">
+          <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
+          <div class="proj-grid">
+            <div class="proj-item" onclick="openProject({
+              title: 'FinAIMT App',
+              desc: 'A comprehensive cross-platform financial application built with Flutter and Node.js. Features integrated UPI payment workflows, real-time transaction history, secure user authentication, and investment management tools.',
+              images: ['images/p1.png', 'images/p2.png', 'images/p3.png', 'images/p4.png', 'images/p5.png', 'images/p6.png', 'images/p7.png', 'images/p8.png', 'images/p9.png'],
+              tech: ['Flutter', 'Node.js', 'Clean Architecture', 'UPI SDK'],
+              live: '#',
+              liveLabel: 'App Demo Video',
+              github: 'https://github.com/suriyabalaji-007/FinAIMT'
+            })">
+              <img src="images/p1.png" alt="P1" loading="lazy" decoding="async">
+              <div class="proj-overlay"><div>FinAIMT App</div></div>
+            </div>
+            <div class="proj-item" onclick="openProject({
+              title: 'Dojo System',
+              desc: 'A full-scale martial arts management platform for Goshin Ryu Karate. Includes instructor dashboards, student progress tracking, event registration, and branch management via a robust MERN stack backend.',
+              images: ['images/k1.png','images/k2.png','images/k3.png','images/k4.png', 'images/k5.png', 'images/k6.png', 'images/k7.png', 'images/k8.png', 'images/k9.png', 'images/k10.png', 'images/k11.png', 'images/k12.png'],
+              tech: ['React', 'Express', 'MongoDB', 'Node.js'],
+              live: '#',
+              liveLabel: 'Visit Dojo',
+              github: 'https://github.com/suriyabalaji-007/Goshin-Ryu-KarateDo'
+            })">
+              <img src="images/k1.png" alt="P3" loading="lazy" decoding="async">
+              <div class="proj-overlay"><div>Dojo System</div></div>
+            </div>
+            <div class="proj-item" onclick="openProject({
+              title: 'Weapon Detection & Threat Analysis',
+              desc: 'A cutting-edge security application designed to detect weapons and analyze potential threats in real-time. Built with a focus on public safety and rapid response.',
+              images: ['images/w1.png', 'images/w2.png', 'images/w3.png', 'images/w4.png'],
+              tech: [''],
+              live: '#',
+              liveLabel: 'Weapon Detection',
+              github: 'https://github.com/suriyabalaji-007/Weapon_Detection'
+            })">
+              <img src="images/w1.png" alt="P4" loading="lazy" decoding="async">
+              <div class="proj-overlay"><div>Weapon Detection & Threat Analysis</div></div>
+            </div>
+            <div class="proj-item" onclick="openProject({
+              title: 'Portfolio_SSTamilan',
+              desc: 'A premium, high-fidelity portfolio website with a dashboard-inspired bento layout. Features glassmorphism effects, dynamic grid packing, and immersive media showcases.',
+              images: ['images/project2.png', 'images/project2.png'],
+              tech: ['HTML5', 'Vanilla CSS', 'JavaScript', 'Bento Grid'],
+              live: 'https://suriyabalajiportfolio.netlify.app/',
+              liveLabel: 'View Site',
+              github: 'https://github.com/suriyabalaji-007/portfolio_sstamilan'
+            })">
+              <img src="images/project2.png" alt="P2" loading="lazy" decoding="async">
+              <div class="proj-overlay"><div>Portfolio_SSTamilan</div></div>
+            </div>
+            <div class="proj-item" onclick="openProject({
+              title: 'Portfolio v1',
+              desc: 'A premium, high-fidelity portfolio website with a dashboard-inspired bento layout. Features glassmorphism effects, dynamic grid packing, and immersive media showcases.',
+              images: ['images/p21.png', 'images/p22.png', 'images/p23.png', 'images/p24.png'],
+              tech: ['HTML5', 'Vanilla CSS', 'JavaScript', 'Bento Grid'],
+              live: 'https://suriyabalajiportfolio.netlify.app/',
+              liveLabel: 'View Site',
+              github: 'https://github.com/suriyabalaji-007/portfolio_sstamilan'
+            })">
+              <img src="images/p21.png" alt="P2" loading="lazy" decoding="async">
+              <div class="proj-overlay"><div>Portfolio v1</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE CARD -->
+        <div class="card" id="experience">
+          <h2><i class="fas fa-briefcase"></i> Experience Timeline</h2>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+              <strong style="color: var(--accent);">MERN FullStack Intern</strong> • EduSkills Foundation • 2026 
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+              <strong style="color: var(--accent);">Gen-AI Developer Intern</strong> • IAHV (India) • 2025 
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+              <strong style="color: var(--accent);">Software Developer Intern</strong> • Semantic Soft • 2025
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; font-size: 0.85rem;">
+              <strong style="color: var(--accent);">Karate Instructor</strong> • Goshin Ryu Karate Do • 2023–Present
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATES CARD (FULL LIST RESTORED) -->
+        <div class="card col-3" id="certs">
+          <h2><i class="fas fa-award"></i> The Certification Hub</h2>
+          <div class="cert-list">
+            <div class="cert-item" onclick="openModal('images/cert1.png', 'IIT Madras Shaastra AIML Challenge — Winner')">
+              <img src="images/cert1.png" alt="C1" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>IIT Madras Techathon</h4>
+                  <p>AIML Challenge Winner</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert2.png', 'Artificial Intelligence Certification')">
+              <img src="images/cert2.png" alt="C2" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>AI Certification</h4>
+                  <p>Advanced Fundamentals</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert3.png', 'Business Intelligence — IBM')">
+              <img src="images/cert3.png" alt="C3" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>Business Intelligence</h4>
+                  <p>IBM Data Insights</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert4.png', 'JavaScript — Spoken Tutorial IITB')">
+              <img src="images/cert4.png" alt="C4" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>JavaScript</h4>
+                  <p>IIT Bombay Training</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert5.png', 'Python — Spoken Tutorial IITB')">
+              <img src="images/cert5.png" alt="C5" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>Python</h4>
+                  <p>Core Development</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert6.png', 'BootStrap Training — IITB')">
+              <img src="images/cert6.png" alt="C6" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>BootStrap</h4>
+                  <p>Responsive UI</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert7.png', 'Blockchain Foundation — KBA')">
+              <img src="images/cert7.png" alt="C7" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>Blockchain</h4>
+                  <p>Foundation & Ledger</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert8.png', 'Php and MySql — IITB')">
+              <img src="images/cert8.png" alt="C8" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>Php and MySql</h4>
+                  <p>Server-side Engineering</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert9.png', 'Git Training — Simplilearn')">
+              <img src="images/cert9.png" alt="C9" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>Git Training</h4>
+                  <p>Version Control</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert10.png', 'GitHub Copilot Fundamentals')">
+              <img src="images/cert10.png" alt="C10" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>GitHub Copilot</h4>
+                  <p>AI-Assisted Coding</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert11.JPEG', 'Technoxian World Cup 2024')">
+              <img src="images/cert11.JPEG" alt="C11" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>Technoxian Cup</h4>
+                  <p>World Robotics 2024</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert12.JPEG', 'SHODAN (Black Belt) - Karate')">
+              <img src="images/cert12.JPEG" alt="C12" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>Black Belt</h4>
+                  <p>Martial Arts Mastery</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+            <div class="cert-item" onclick="openModal('images/cert15.PNG', 'MERN FullStack Virtual Internship')">
+              <img src="images/cert15.PNG" alt="C15" loading="lazy" decoding="async">
+              <div class="cert-overlay">
+                <div class="cert-info">
+                  <h4>MERN Internship</h4>
+                  <p>Full-stack Web Dev</p>
+                </div>
+                <div class="cert-view-label">View Option</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTACT & SOCIALS CARD -->
+        <div class="card col-3" id="contact" style="align-items: center; text-align: center;">
+          <h2><i class="fas fa-link"></i> Uplink</h2>
+          <div style="display: flex; gap: 20px; align-items: center; justify-content: center; flex-wrap: wrap; margin-top: 10px;">
+            <a href="tel:+919962434596" style="text-decoration: none; color: var(--text); font-size: 0.9rem;"><i class="fas fa-phone"></i> +91 99624 34596</a>
+            <a href="mailto:suriyabalaji373@gmail.com" style="text-decoration: none; color: var(--text); font-size: 0.9rem;"><i class="fas fa-envelope"></i> Email Me</a>
+            <a href="https://github.com/suriyabalaji-007" target="_blank" style="color: var(--accent); font-size: 1.5rem;"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/s-suriyabalaji" target="_blank" style="color: var(--accent); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/9962434596" target="_blank" style="color: var(--accent); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/sensei_suriyabalaji" target="_blank" style="color: var(--accent); font-size: 1.5rem;"><i class="fab fa-instagram"></i></a>
+            <a href="RESUME.pdf" target="_blank" style="border: 1px solid var(--accent); color: var(--accent); padding: 8px 20px; border-radius: 8px; text-decoration: none; font-size: 0.85rem; margin-left: 10px;">View Resume</a>
+          </div>
+        </div>
+
+      </div>
+
+      <footer>
+        © <span id="current-year"></span> S. Suriyabalaji. Engineered for high performance and visual excellence.
+      </footer>
+    </main>
+  </div>
+
+  <!-- MEDIA MODAL -->
+  <div id="mediaModal" class="modal">
+    <div class="modal-shell">
+      <span class="close-btn" id="modalClose">&times;</span>
+      
+      <div class="modal-left">
+        <img id="modalImg" class="modal-img" src="">
+        <div id="certCap" class="cert-floating-cap">Certificate Details</div>
+        <div class="modal-controls">
+          <button class="modal-arrow" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+          <button class="modal-arrow" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      
+      <div class="modal-right">
+        <div class="modal-details">
+          <h2 id="pTitle">Project Title</h2>
+          <p id="pDesc">Project description goes here...</p>
+          <div id="pTech" class="chips" style="margin-bottom: 30px;">
+            <!-- Tech chips go here -->
+          </div>
+        </div>
+        
+        <div class="modal-links">
+          <a href="#" id="liveLink" target="_blank" class="modal-btn primary">Live Demo</a>
+          <a href="#" id="gitLink" target="_blank" class="modal-btn secondary"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Nav Highlighting
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            const navLink = document.querySelector(`.sidenav a[href="#${id}"]`);
+            if (navLink) {
+              document.querySelectorAll('.sidenav a').forEach(a => a.classList.remove('active'));
+              navLink.classList.add('active');
+            }
+          }
+        });
+      }, { threshold: 0.4, rootMargin: "-10% 0px -40% 0px" });
+      document.querySelectorAll('section, .card').forEach(sect => observer.observe(sect));
+
+      // Modal Logic
+      const modal = document.getElementById('mediaModal');
+      const modalImg = document.getElementById('modalImg');
+      const closeBtn = document.getElementById('modalClose');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      
+      let currentProject = null;
+      let currentImgIdx = 0;
+      let slideInterval = null;
+
+      window.openProject = function(data) {
+        currentProject = data;
+        currentImgIdx = data.startIndex || 0;
+        clearInterval(slideInterval);
+
+        const shell = document.querySelector('.modal-shell');
+        const certCap = document.getElementById('certCap');
+        
+        if (data.isCert) {
+          shell.classList.add('cert-mode');
+          certCap.textContent = data.desc;
+        } else {
+          shell.classList.remove('cert-mode');
+        }
+        
+        document.getElementById('pTitle').textContent = data.title;
+        document.getElementById('pDesc').textContent = data.desc;
+        const liveLink = document.getElementById('liveLink');
+        liveLink.href = data.live;
+        liveLink.textContent = data.liveLabel || 'Live Demo';
+        document.getElementById('gitLink').href = data.github;
+        
+        // Populate Tech Chips
+        const techContainer = document.getElementById('pTech');
+        techContainer.innerHTML = '';
+        if (data.tech) {
+          data.tech.forEach(t => {
+            const span = document.createElement('span');
+            span.textContent = t;
+            techContainer.appendChild(span);
+          });
+        }
+        
+        updateImg();
+        
+        // Toggle arrows and start auto-slide if multiple images
+        const controls = document.querySelector('.modal-controls');
+        if (data.images.length > 1) {
+          controls.style.display = 'flex';
+          if (!data.isCert) {
+            slideInterval = setInterval(() => {
+              currentImgIdx = (currentImgIdx + 1) % currentProject.images.length;
+              updateImg();
+            }, 5000);
+          }
+        } else {
+          controls.style.display = 'none';
+        }
+        
+        modal.classList.add('show');
+      }
+
+      function updateImg() {
+        if (currentProject && currentProject.images.length > 0) {
+          modalImg.style.opacity = '0';
+          setTimeout(() => {
+            modalImg.src = currentProject.images[currentImgIdx];
+            modalImg.style.opacity = '1';
+            
+            // Handle certificate caption updates
+            if (currentProject.isCert && currentProject.certCaptions) {
+              document.getElementById('certCap').textContent = currentProject.certCaptions[currentImgIdx];
+            }
+          }, 200);
+        }
+      }
+
+      prevBtn.onclick = (e) => {
+        e.stopPropagation();
+        currentImgIdx = (currentImgIdx - 1 + currentProject.images.length) % currentProject.images.length;
+        updateImg();
+      };
+
+      nextBtn.onclick = (e) => {
+        e.stopPropagation();
+        currentImgIdx = (currentImgIdx + 1) % currentProject.images.length;
+        updateImg();
+      };
+
+      // Optimized openModal for certificates with Gallery Support
+      window.openModal = function(src, cap) {
+        const certItems = Array.from(document.querySelectorAll('.cert-item'));
+        const allCerts = certItems.map(item => {
+          const img = item.querySelector('img').getAttribute('src');
+          const title = item.querySelector('h4').textContent;
+          const sub = item.querySelector('p').textContent;
+          return { src: img, caption: `${title} — ${sub}` };
+        });
+
+        const startIdx = allCerts.findIndex(c => c.src === src);
+
+        openProject({
+          title: 'Certificate',
+          desc: cap,
+          images: allCerts.map(c => c.src),
+          certCaptions: allCerts.map(c => c.caption),
+          live: src,
+          liveLabel: 'View Certificate',
+          github: '#',
+          isCert: true,
+          startIndex: startIdx >= 0 ? startIdx : 0
+        });
+      }
+
+      closeBtn.onclick = () => {
+        clearInterval(slideInterval);
+        modal.classList.remove('show');
+      };
+      window.onclick = (e) => { 
+        if (e.target === modal) {
+          clearInterval(slideInterval);
+          modal.classList.remove('show');
+        }
+      }
+
+      // Keyboard Controls
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('show')) return;
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
+      });
+      // Subtle Thumbnail Slideshow
+      const projItems = document.querySelectorAll('.proj-item');
+      projItems.forEach(item => {
+        const onClickAttr = item.getAttribute('onclick');
+        if (onClickAttr && onClickAttr.includes('images:')) {
+          try {
+            // Extract the images array from the onclick string
+            const match = onClickAttr.match(/images:\s*\[([^\]]+)\]/);
+            if (match) {
+              const imgs = match[1].replace(/'/g, '').split(',').map(s => s.trim());
+              if (imgs.length > 1) {
+                let idx = 0;
+                const imgElement = item.querySelector('img');
+                setInterval(() => {
+                  idx = (idx + 1) % imgs.length;
+                  imgElement.style.opacity = '0.3';
+                  setTimeout(() => {
+                    imgElement.src = imgs[idx];
+                    imgElement.style.opacity = '0.6';
+                  }, 400);
+                }, 4000 + Math.random() * 2000); // Staggered start
+              }
+            }
+          } catch(e) { console.error("Slideshow init failed", e); }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

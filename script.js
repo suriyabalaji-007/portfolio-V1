@@ -52,6 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('pTitle').textContent = data.title;
     document.getElementById('pDesc').textContent = data.desc;
 
+    const pPeriod = document.getElementById('pPeriod');
+    const pPeriodText = document.getElementById('pPeriodText');
+    if (data.period && !data.isCert) {
+      pPeriodText.textContent = data.period;
+      pPeriod.style.display = 'block';
+    } else {
+      pPeriod.style.display = 'none';
+      pPeriodText.textContent = '';
+    }
+
     const liveLink = document.getElementById('liveLink');
     liveLink.href = data.live;
     liveLink.textContent = data.liveLabel || 'Live Demo';

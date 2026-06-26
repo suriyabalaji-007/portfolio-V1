@@ -209,8 +209,10 @@
               desc: 'I developed this comprehensive cross-platform financial ecosystem using Flutter and Node.js. It features precision-engineered UPI payment workflows, real-time transaction tracking, and high-security authentication to streamline digital investments. (Includes both Web & Mobile versions)',
               images: ['images/p1.png', 'images/p2.png', 'images/p3.png', 'images/p4.png', 'images/p5.png', 'images/p6.png', 'images/p7.png', 'images/p8.png', 'images/p9.png'],
               tech: ['Flutter', 'Node.js', 'Clean Architecture', 'UPI SDK'],
-              live: '#',
-              liveLabel: 'App Demo Video',
+              live: 'images/light.mp4',
+              liveLabel: 'Light Theme Demo',
+              liveDark: 'images/dark.mp4',
+              liveDarkLabel: 'Dark Theme Demo',
               github: 'https://github.com/suriyabalaji-007/FinAIMT'
             })">
               <img src="images/p1.png" alt="P1" loading="lazy" decoding="async">
@@ -248,20 +250,7 @@
                 <div>Weapon Detection & Threat Analysis</div>
               </div>
             </div>
-            <div class="proj-item" onclick="openProject({
-              title: 'Portfolio Ecosystem (V1)',
-              period: 'April 2026',
-              desc: 'A premium, high-fidelity portfolio ecosystem designed to showcase my journey. Features glassmorphism effects, dynamic grid packing, and immersive media showcases across multiple iterations.',
-              images: ['images/p21.png', 'images/p22.png', 'images/p23.png', 'images/p24.png'],
-              tech: ['HTML5', 'Vanilla CSS', 'JavaScript', 'Bento Grid'],
-              live: 'https://suriyabalaji-portfolio-v1.netlify.app/',
-              liveLabel: 'View Site',
-              github: 'https://github.com/suriyabalaji-007/portfolio_v2'
-            })">
-              <img src="images/p21.png" alt="P2" loading="lazy" decoding="async">
-              <div class="proj-overlay">
-                <div>Portfolio Ecosystem</div>
-              </div>
+            
             </div>
             <div class="proj-item" onclick="openProject({
               title: 'Portfolio_SSTamilan (V1)',
@@ -525,6 +514,7 @@
 
         <div class="modal-links">
           <a href="#" id="liveLink" target="_blank" class="modal-btn primary">Live Demo</a>
+          <a href="#" id="liveDarkLink" target="_blank" class="modal-btn primary" style="display: none;">Dark Demo</a>
           <a href="#" id="gitLink" target="_blank" class="modal-btn secondary"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>

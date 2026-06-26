@@ -65,6 +65,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const liveLink = document.getElementById('liveLink');
     liveLink.href = data.live;
     liveLink.textContent = data.liveLabel || 'Live Demo';
+
+    const liveDarkLink = document.getElementById('liveDarkLink');
+    if (data.liveDark) {
+      liveDarkLink.href = data.liveDark;
+      liveDarkLink.textContent = data.liveDarkLabel || 'Dark Demo';
+      liveDarkLink.style.display = 'inline-flex';
+    } else {
+      liveDarkLink.style.display = 'none';
+    }
+
     document.getElementById('gitLink').href = data.github;
 
     const techContainer = document.getElementById('pTech');

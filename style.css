@@ -189,11 +189,14 @@ main {
 .row-2 { grid-row: span 2; }
 
 /* Projects Grid */
-.proj-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
 
 .proj-item {
-  flex: 1 1 280px;
-  height: 200px;
+  height: 250px;
   border-radius: 20px;
   overflow: hidden;
   background: #000;
@@ -457,6 +460,19 @@ footer {
 
 /* Timeline */
 .timeline { position: relative; padding-left: 20px; margin-top: 10px; }
+
+#experience .timeline {
+  max-height: 530px;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+#experience .timeline::-webkit-scrollbar {
+  width: 4px;
+}
+#experience .timeline::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
 
 .timeline::before {
   content: '';

@@ -19,9 +19,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // Modal Elements
   const modal = document.getElementById('mediaModal');
   const modalImg = document.getElementById('modalImg');
+  const modalVideo = document.getElementById('modalVideo');
   const closeBtn = document.getElementById('modalClose');
   const prevBtn = document.getElementById('prevBtn');
   const nextBtn = document.getElementById('nextBtn');
+
+  function playVideo(src) {
+    modalImg.style.display = 'none';
+    modalVideo.style.display = 'block';
+    modalVideo.src = src;
+    modalVideo.play();
+  }
+
+  function stopVideo() {
+    modalVideo.pause();
+    modalVideo.src = '';
+    modalVideo.style.display = 'none';
+    modalImg.style.display = 'block';
+    updateImg();
+  }
 
   let currentProject = null;
   let currentImgIdx = 0;
@@ -127,9 +143,19 @@ document.addEventListener('DOMContentLoaded', () => {
     updateImg();
   };
 
-  const closeModal = () => { clearInterval(slideInterval); modal.classList.remove('show'); };
+  const closeModal = () => { clearInterval(slideInterval); stopVideo(); modal.classList.remove('show'); };
   closeBtn.onclick = closeModal;
   window.onclick = (e) => { if (e.target === modal) closeModal(); };
+
+  // Play video inline when button href ends in .mp4
+  ['liveLink', 'liveDarkLink'].forEach(id => {
+    document.getElementById(id).addEventListener('click', function (e) {
+      if (this.href && this.href.endsWith('.mp4')) {
+        e.preventDefault();
+        playVideo(this.getAttribute('href'));
+      }
+    });
+  });
 
   document.addEventListener('keydown', (e) => {
     if (!modal.classList.contains('show')) return;

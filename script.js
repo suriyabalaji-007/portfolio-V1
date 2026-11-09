@@ -25,17 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.getElementById('nextBtn');
 
   function playVideo(src) {
+    clearInterval(slideInterval);           // stop image slideshow
     modalImg.style.display = 'none';
     modalVideo.style.display = 'block';
     modalVideo.src = src;
-    modalVideo.play();
+    modalVideo.load();
+    const promise = modalVideo.play();
+    if (promise !== undefined) {
+      promise.catch(() => {
+        // Autoplay blocked — video will play on user interaction
+      });
+    }
   }
 
   function stopVideo() {
     modalVideo.pause();
-    modalVideo.src = '';
+    modalVideo.removeAttribute('src');
+    modalVideo.load();
     modalVideo.style.display = 'none';
-    modalImg.style.display = 'block';
+    modalImg.style.display = '';
     updateImg();
   }
 
@@ -59,6 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
     currentProject = data;
     currentImgIdx = data.startIndex || 0;
     clearInterval(slideInterval);
+
+    // Always reset video state when opening a project
+    modalVideo.pause();
+    modalVideo.removeAttribute('src');
+    modalVideo.style.display = 'none';
+    modalImg.style.display = '';
 
     const shell = document.querySelector('.modal-shell');
     const certCap = document.getElementById('certCap');
